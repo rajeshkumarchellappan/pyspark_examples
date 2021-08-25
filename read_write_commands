@@ -1,0 +1,24 @@
+Read and write variety of file formats:
+
+Read:
+-------------------
+
+parquet=spark.read.parquet("file:///SparkCourse/01_Datasets/customer_parq.parquet")
+
+df22=spark.read.text('file:///SparkCourse/01_Datasets/data_10.txt')
+
+df33=spark.read.json('file:///SparkCourse/01_Datasets/json_sample.json')
+
+write:
+-----------------------------------
+df.write.parquet("file:///SparkCourse/01_Datasets/user_parq.parquet")
+df.write.mode('append').parquet("file:///SparkCourse/01_Datasets/user_parq.parquet")
+df.write.mode('overwrite').parquet("file:///SparkCourse/01_Datasets/user_parq.parquet")
+
+useful commands
+-------------------------
+
+df.createOrReplaceTempView('ParquetTable') #Sql
+
+df234=df4411.withColumn('Temp',func.round(func.col("min(temp)") * 0.1 * (9.0 / 5.0) + 32.0, 2)).select("ID", "temp").sort("temp")
+
